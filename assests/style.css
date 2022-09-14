@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #555;
+}
+
+/* ------------------- NavBar & Logo Area ---------------- */
+
+.logo {
+    text-align: center;
+    justify-content: center;
+}
+
+/* Style the navigation menu */
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+  }
+  
+  /* Navigation buttons */
+  .navbar button {
+    float: left;
+    padding: 12px;
+    color: #000;
+    text-decoration: none;
+    font-size: larger;
+    width: 16.6%; 
+    text-align: center;
+  }
+  .navbar button:hover {
+    opacity: .7;
+  }
+  .navbar button.goods-in {
+    background-color: #2cf915;
+  }
+  .navbar button.specials {
+    background-color: #d0ff14;
+  }
+  .navbar button.tca {
+    background-color: #143fff;
+  }
+  .navbar button.ptz {
+    background-color: #147aff;
+  }
+  .navbar button.double-deckers {
+    background-color: #ff0f0f;
+  }
+  .navbar button.other {
+    background-color: #fa00b3;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .navbar button {
+      float: none;
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  /* ------------ Main section ------------ */
+        /*----- form information ---- */ 
+
+fieldset {
+    justify-content: center;
+    text-align: center;
+    width: 99%;
+    line-height: 1.5;
+  }
+
+  input {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    margin: 8px;
+  }
+
+  input[type=text]:focus {
+    background-color: lightblue;
+  }
+
+  p {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+    color: #2cf915;
+  }
