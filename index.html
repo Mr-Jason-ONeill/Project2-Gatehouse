@@ -9,16 +9,13 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
     crossorigin="anonymous">
     <link rel="stylesheet" href="assests\style.css">
-    <script src="https://code.jquery.com/jquery-3.6.1.js"
-    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-  crossorigin="anonymous"></script>
     <title>GATEHOUSE, IN & OUT DATA COLLECTION</title>
 </head>
 
 <body>
     <div class="navbar">
         <button class="goods-in" href="#"><i class="fa fa-fw fa-home"></i> Goods In</button> 
-        <button class="specials"><i class="fa fa-fw fa-home"></i> Specials</button> 
+        <button onclick="specialsInfo()" id="specials" class="specials"><i class="fa fa-fw fa-home"></i> Specials</button> 
         <button class="tca"><abbr title="Temperature Controlled Area" style="text-decoration: none;">
             <i class="fa fa-thermometer-empty"></i> TCA</button></abbr>
         <button class="ptz"><abbr title="Pick To Zero" style="text-decoration: none;">
@@ -27,7 +24,7 @@
         <button class="other"><i class="fa fa-address-card-o"></i> Other</button>
 </div>
 <div class="department-info">
-    <p>Goods In, Mon - Fri: 05:00 - 16:30,  Sat: 05:00 - 14:30, Sun: 05:00 - 11:00. <br>
+    <p id="info">Goods In, Mon - Fri: 05:00 - 16:30,  Sat: 05:00 - 14:30, Sun: 05:00 - 11:00. <br>
         Ambient: Bays: 7 - 16, Eggs: Bays: 13 - 16, Toilet Roll: Bays: 5 - 6, Leaflets/Posters: Bays: 24 <br>
         Office: Bay: 10</p>
 </div>
@@ -64,7 +61,9 @@
 
 
 
-
+<script src="https://code.jquery.com/jquery-3.6.1.js"
+integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+crossorigin="anonymous"></script>
 <script src="assests\js\main.js"></script>
 </body>
 </html> 
