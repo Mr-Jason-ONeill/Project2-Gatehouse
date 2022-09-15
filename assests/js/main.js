@@ -41,7 +41,7 @@ $('.other').click(function(){
 	$('p').css('color', '#660053');
     $('p').text(` Contractors are usually for VMU(Truck Wash) or Maintenance: Send to correct location, give Contractor card. 
     Collecting trays or pallets are for Pallet Area.
+    Collecting Trays: Bays: 50 - 54, Office: Bay: 52 (Give PTZ card).   
     Pallets: Send to Pallet Area, No card needed.
-    Collecting Trays: Bays: 50 - 54, Office: Bay: 52
      `);
 });

@@ -65,6 +65,26 @@ body {
   }
 
   /* ------------ Main section ------------ */
+
+  .left-container {
+    display: inline-flex;
+    float: left;
+    width: 33%;
+  }
+
+  .mid-container {
+    display: inline-flex;
+    width: 33%;
+    justify-content: center; 
+    
+  }
+
+  .right-container {
+    display: inline-flex;
+    float: right;
+    width: 33%;
+  }
+
         /*----- form information ---- */ 
 
 fieldset {
@@ -79,6 +99,10 @@ fieldset {
     text-align: center;
     padding: 12px 20px;
     margin: 8px;
+  }
+  input[type=text] {
+    border: 2px solid #000;
+    border-radius: 4px;
   }
 
   input[type=text]:focus {

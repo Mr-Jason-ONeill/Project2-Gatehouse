@@ -29,7 +29,7 @@
         Office: Bay: 10</p>
 </div>
 
-<div class="main-container">
+<div class="left-container">
     <form method="post">
         <fieldset>
           <legend>Vehicle Entering</legend>
@@ -41,11 +41,23 @@
         <br>
         <input type="text" id="card-given" name="card-given" placeholder="Card You Give Driver">
         <br>
-        <input type="submit" value="Submit" class="btn btn-outline-warning btn-lg"></button>
+        <input type="submit" value="Submit" class="btn btn-outline-primary btn-lg"></button>
         <br>
       </fieldset>
     </form>
-    <!-- Add an area for when drivers leave?
+</div>
+<div class="mid-container">
+  <form method="get">
+      <fieldset>
+        <legend><i class="fa fa-search"></i> Search</legend>
+      <input type="text" id="search" name="seach" placeholder="Search for Driver, Company or Card">
+      <br>
+      <input type="submit" value="Submit" class="btn btn-outline-success btn-lg"></button>
+      <br>
+    </fieldset>
+  </form> 
+</div>
+<div class="right-container">
     <form method="post">
         <fieldset>
           <legend>Vehicle Leaving</legend>
@@ -56,7 +68,7 @@
         <input type="submit" value="Submit" class="btn btn-outline-warning btn-lg"></button>
         <br>
       </fieldset>
-    </form> -->
+    </form> 
 </div>
 
 
