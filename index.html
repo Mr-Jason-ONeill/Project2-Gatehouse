@@ -14,19 +14,19 @@
 
 <body>
     <div class="navbar">
-        <button id="goods-in"class="goods-in" href="#"><i class="fa fa-fw fa-home"></i> Goods In</button> 
-        <button id="specials" class="specials"><i class="fa fa-fw fa-home"></i> Specials</button> 
-        <button id="tca" class="tca"><abbr title="Temperature Controlled Area" style="text-decoration: none;">
+        <button type="button" id="goods-in"class="goods-in" href="#"><i class="fa fa-fw fa-home"></i> Goods In</button> 
+        <button type="button" id="specials" class="specials"><i class="fa fa-fw fa-home"></i> Specials</button> 
+        <button type="button" id="tca" class="tca"><abbr title="Temperature Controlled Area" style="text-decoration: none;">
             <i class="fa fa-thermometer-empty"></i> TCA</button></abbr>
-        <button id="ptz" class="ptz"><abbr title="Pick To Zero" style="text-decoration: none;">
+        <button type="button" id="ptz" class="ptz"><abbr title="Pick To Zero" style="text-decoration: none;">
             <i class="fa fa-thermometer-empty"></i> PTZ</button></abbr>
-        <button id="double-deckers" class="double-deckers"><i class="fa fa-truck"></i> Double Deckers</button> 
-        <button id="other" class="other"><i class="fa fa-address-card-o"></i> Other</button>
+        <button type="button" id="double-deckers" class="double-deckers"><i class="fa fa-truck"></i> Double Deckers</button> 
+        <button type="button" id="other" class="other"><i class="fa fa-address-card-o"></i> Other</button>
 </div>
 <div class="department-info">
-    <p id="info">Goods In, Mon - Fri: 05:00 - 16:30,  Sat: 05:00 - 14:30, Sun: 05:00 - 11:00. <br>
-        Ambient: Bays: 7 - 16, Eggs: Bays: 13 - 16, Toilet Roll: Bays: 5 - 6, Leaflets/Posters: Bays: 24 <br>
-        Office: Bay: 10</p>
+    <p id="info">Goods In: Mon - Fri: 05:00 - 16:30, Sat: 05:00 - 14:30, Sun: 05:00 - 11:00 <br/>
+      Ambient: Bays 7 - 16, Eggs: Bays: 13 - 16, Toilet Roll: Bays: 5 or 6, Leaflets/Posters: Bay: 24 <br/>
+      Office: Bay: 10</p>
 </div>
 
 <div class="left-container">
@@ -41,21 +41,18 @@
         <br>
         <input type="text" id="card-given" name="card-given" placeholder="Card You Give Driver">
         <br>
-        <input id="subDetails" type="submit" value="Submit" class="btn btn-outline-primary btn-lg"></button>
+        <div class="form-check form-switch">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Is The Driver Trained?</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        </div>
+        <br>
+        <input id="subDetails" type="submit" value="Submit" class="btn btn-outline-primary btn-lg">
         <br>
       </fieldset>
     </form>
 </div>
 <div class="mid-container">
-  <form method="get">
-      <fieldset>
-        <legend><i class="fa fa-search"></i> Search</legend>
-      <input type="text" id="search" name="seach" placeholder="Search for Driver, Company or Card">
-      <br>
-      <input id="subSearch" type="submit" value="Submit" class="btn btn-outline-success btn-lg"></button>
-      <br>
-    </fieldset>
-  </form> 
+  <h1>Will display addtional information</h1>
 </div>
 <div class="right-container">
     <form method="post">
@@ -65,7 +62,7 @@
         <br>
         <input type="text" id="card-back" name="card-back" placeholder="Card Driver Returns">
         <br>
-        <input id="subLeaving" type="submit" value="Submit" class="btn btn-outline-warning btn-lg"></button>
+        <input id="subLeaving" type="submit" value="Submit" class="btn btn-outline-warning btn-lg">
         <br>
       </fieldset>
     </form> 
