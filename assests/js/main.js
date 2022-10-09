@@ -1,6 +1,8 @@
 
 // ------------------  Nav buttons 
 
+const { getDefaultWatermarks } = require("istanbul-lib-report");
+
 $('.goods-in').click(function(){
     let goodsInfo = `
        Goods In: Mon - Fri: 05:00 - 16:30, Sat: 05:00 - 14:30, Sun: 05:00 - 11:00 <br/>
@@ -71,4 +73,25 @@ $('.other').click(function() {
     $('#info').html(otherInfo);
 }); 
 
-// ---------------------- Form 
+// ---------------------- Submit & Search Buttons
+const baseURL = "https://apibroker-license-plate-search-v1.p.rapidapi.com/license-plate-search?format=json&state=United%20Kingdom&plate=AA72AAA"
+
+function getData(cb) {
+var xhr = new XMLHttpRequest();
+
+xhr.open('GET', baseURL + type + '/');
+xhr.send();
+
+
+xhr.onreadystatechange = function() {
+    if(this.readyState == 4 && this.status == 200) {
+        cb(JSON.parse(this.responseText));
+        }
+    };
+}
+
+    function writeToDocument(type) {
+        getData(type, function(data) {
+            document.getElementById('data').innerHTML = data;
+        });
+    }
