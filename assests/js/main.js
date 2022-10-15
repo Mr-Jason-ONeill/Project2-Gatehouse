@@ -1,7 +1,6 @@
 
 // ------------------  Nav buttons 
 
-
 $('.goods-in').click(function(){
     let goodsInfo = `
        Goods In: Mon - Fri: 05:00 - 16:30, Sat: 05:00 - 14:30, Sun: 05:00 - 11:00 <br/>
@@ -104,3 +103,13 @@ $('vehicle-form').on('submit', function (e) {
         document.getElementById('data').innerHTML = data;
     });
 })
+
+// ----------------------- Text input
+
+
+$('.upper').on('blur', function() {
+    this.value = this.value.toUpperCase();
+});
+
+
+
