@@ -1,6 +1,7 @@
 
 // ------------------  Nav buttons 
 
+
 $('.goods-in').click(function(){
     let goodsInfo = `
        Goods In: Mon - Fri: 05:00 - 16:30, Sat: 05:00 - 14:30, Sun: 05:00 - 11:00 <br/>
@@ -42,6 +43,7 @@ $('.ptz').click(function() {
         Produce: (+4 And Above)(Examples: Potatoes, Bananas), Bays: 25 - 49 <br/>
         Chilled (0 To +3)(Examples: Grapes, Berries), Bays: 58 - 62 <br/>
         Chilled(Meat)(Examples: Steak, Fish Fillet), Bays: 63 - 70 <br/>
+     
         Bread (Goes to Goods In Area), Bays: 19 - 21 <br/>
         Produce And Chilled Office: Bay 55, Bread Office: Bay 10 `;
 
@@ -71,25 +73,34 @@ $('.other').click(function() {
     $('#info').html(otherInfo);
 }); 
 
-// ---------------------- Submit & Search Buttons
-const baseURL = "https://apibroker-license-plate-search-v1.p.rapidapi.com/license-plate-search?format=json&state=United%20Kingdom&plate=AA72AAA"
+// ---------------------- API related
 
 function getData(cb) {
-var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
 
-xhr.open('GET', baseURL + type + '/');
-xhr.send();
+    xhr.open('GET', baseURL + type + '/');
 
+    xhr.setRequestHeader("X-RapidAPI-Key", "d3615a1840mshb3696a181f253a7p164436jsn6db10d3c81a0") ;
+    xhr.setRequestHeader("X-RapidAPI-Host", "motor-carrier-search.p.rapidapi.com");
 
-xhr.onreadystatechange = function() {
-    if(this.readyState == 4 && this.status == 200) {
-        cb(JSON.parse(this.responseText));
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            cb(JSON.parse(this.responseText) );
         }
     };
+
+    xhr.send();
 }
 
-    function writeToDocument(type) {
-        getData(type, function(data) {
-            document.getElementById('data').innerHTML = data;
-        });
-    }
+$('vehicle-form').on('submit', function (e) {
+    e.preventDefault();
+
+    const $form = $(e.currentTarget);
+    const formData = $form.serializeArray();
+    const type = $formData.filter(function(item) { return item.name === 'type'})[0].value;
+
+    getData(type, function(data) {
+        console.log(data)
+        document.getElementById('data').innerHTML = data;
+    });
+})

@@ -14,6 +14,7 @@ Right section | Details of vehicle and driver leaving premises
 ---------------------------------------------------------------------------------------------------------------
 # Api's 
 Api's will be gathered from:
+possibilties;
 https://www.Rapidapi.com
 https://www.gov.co.uk
 https://www.apispreadsheets.com
@@ -22,6 +23,7 @@ https://www.apispreadsheets.com
 # Errors
 Trying to display data onto page, console displaying error message: 
 "Uncaught TypeError: Failed to construct 'XMLHttpRequest': Please use the 'new' operator, this DOM object constructor cannot be called as a function."
+= Refreshed browser, error message gone
 
 function writeToDocument coming up as void also:
 " writeToDocument' is declared but its value is never read.ts(6133) " 
