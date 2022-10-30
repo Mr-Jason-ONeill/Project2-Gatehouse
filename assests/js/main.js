@@ -62,6 +62,7 @@ $('.double-deckers').click(function(){
 });
 
 $('.other').click(function() {
+
     let otherInfo = `
         Contractors (Examples: BVS, Intergral, Crown, KIS, Tennant, CimTech, Rentokil, BetterServe, Dale): Will Require Contractor Cards <br/>
         Delivering Fuel/AdBlue: Send to VMU(Truck Wash), No card needed <br/>
