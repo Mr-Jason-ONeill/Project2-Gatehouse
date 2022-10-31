@@ -33,6 +33,16 @@ body {
     width: 16.6%; 
     text-align: center;
   }
+
+  .back {
+    padding: 12px;
+    color: #000;
+    text-decoration: none;
+    font-size: larger;
+    width: 100%;
+    text-align: center;
+  } 
+
   .navbar button:hover {
     opacity: .7;
   }
@@ -70,11 +80,13 @@ body {
     display: inline-flex;
     float: left;
     width: 33%;
+    height: 100%;
   }
 
   .mid-container {
     display: inline-flex;
     width: 33%;
+    height: 100%;
     justify-content: center; 
     
   }
@@ -82,7 +94,14 @@ body {
   .right-container {
     display: inline-flex;
     float: right;
+    height: 100%;
     width: 33%;
+  }
+
+  .main-container {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 
         /*----- form information ---- */ 
