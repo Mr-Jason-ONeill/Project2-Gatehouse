@@ -1,4 +1,3 @@
-
 // ------------------  Nav buttons 
 
 $('.goods-in').click(function(){
@@ -11,7 +10,6 @@ $('.goods-in').click(function(){
     $('#info').html(goodsInfo);
 });
 
-
 $('.specials').click(function(){
     let specialsInfo = `
        Specials: Mon - Sat: 05:00 - 11:00, Sun: Closed <br/>
@@ -20,9 +18,7 @@ $('.specials').click(function(){
 
     $('#info').css('color', 'yellow');
     $('#info').html(specialsInfo);
-
 });
-
 
 $('.tca').click(function() {
     let tcaInfo = `
@@ -32,29 +28,27 @@ $('.tca').click(function() {
 
     $('#info').css('color', '#04015a');
     $('#info').html(tcaInfo);
-
 });
-
 
 $('.ptz').click(function() {
     let ptzInfo = `
         PTZ: All Week: 13:00 onwards *No Earlier than 13:00* <br/>
-        Produce: (+4 And Above)(Examples: Potatoes, Bananas), Bays: 25 - 49 <br/>
+        Produce: (+4 And Above)(Examples: Potatoes, Bananas), Bays: 2 - 6 <br/>
         Chilled (0 To +3)(Examples: Grapes, Berries), Bays: 58 - 62 <br/>
         Chilled(Meat)(Examples: Steak, Fish Fillet), Bays: 63 - 70 <br/>
      
         Bread (Goes to Goods In Area), Bays: 19 - 21 <br/>
-        Produce And Chilled Office: Bay 55, Bread Office: Bay 10 `;
+        Produce And Bread Office: Bay 10 <br />
+        Chilled Office: Bay 55`;
 
     $('#info').css('color', '#99e9ff');
     $('#info').html(ptzInfo);
-
 });
 
 $('.double-deckers').click(function(){
     let doubleDeckerInfo = `
       ** Be sure to write on driver paperwork ** <br/>
-      TCA & PTZ: Bays: 55 - 57 <br/>
+      TCA & PTZ: Bays: 55 - 57 & 67 - 70 <br/>
       Goods In Bays are all soft top and are fine with Double Deckers ` ;
 
     $('#info').css('color', '#990000');
@@ -62,7 +56,6 @@ $('.double-deckers').click(function(){
 });
 
 $('.other').click(function() {
-
     let otherInfo = `
         Contractors (Examples: BVS, Intergral, Crown, KIS, Tennant, CimTech, Rentokil, BetterServe, Dale): Will Require Contractor Cards <br/>
         Delivering Fuel/AdBlue: Send to VMU(Truck Wash), No card needed <br/>
@@ -80,37 +73,56 @@ function getData(cb) {
 
     xhr.open('GET', baseURL + type + '/');
 
-    xhr.setRequestHeader("X-RapidAPI-Key", "d3615a1840mshb3696a181f253a7p164436jsn6db10d3c81a0") ;
+    xhr.setRequestHeader("X-RapidAPI-Key", "d3615a1840mshb3696a181f253a7p164436jsn6db10d3c81a0");
     xhr.setRequestHeader("X-RapidAPI-Host", "motor-carrier-search.p.rapidapi.com");
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            cb(JSON.parse(this.responseText) );
+            cb(JSON.parse(this.responseText));
         }
     };
 
     xhr.send();
 }
 
-$('vehicle-form').on('submit', function (e) {
+$('#vehicle-form').on('submit', function (e) {
     e.preventDefault();
 
     const $form = $(e.currentTarget);
     const formData = $form.serializeArray();
-    const type = $formData.filter(function(item) { return item.name === 'type'})[0].value;
+    const type = formData.filter(function(item) { return item.name === 'type'})[0].value;
 
     getData(type, function(data) {
         console.log(data)
         document.getElementById('data').innerHTML = data;
     });
-})
+});
 
 // ----------------------- Text input
-
 
 $('.upper').on('blur', function() {
     this.value = this.value.toUpperCase();
 });
 
+// ----------------------- Save form data to .txt file
 
+document.getElementById("subDetails").addEventListener("click", function(event) {
+    event.preventDefault();
 
+    let reg = document.getElementById("reg").value;
+    let name = document.getElementById("name").value;
+    let company = document.getElementById("company").value;
+    let cardGiven = document.getElementById("card-given").value;
+    let trained = document.getElementById("flexSwitchCheckDefault").checked ? "Yes" : "No";
+
+    let fileContent = `Driver Registration: ${reg}\nDriver Name: ${name}\nCompany: ${company}\nCard Given: ${cardGiven}\nDriver Trained: ${trained}`;
+
+    let blob = new Blob([fileContent], { type: "text/plain" });
+    let link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "vehicle_entry.txt";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});

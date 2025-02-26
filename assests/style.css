@@ -4,6 +4,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
     background-color: #685f55;
@@ -134,4 +135,8 @@ fieldset {
     font-size: large;
     font-weight: bolder;
     color: #2cf915;
+  }
+
+  .form-switch {
+    margin-left: 2rem;
   }
