@@ -1,0 +1,12 @@
+.reg-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg-info-box {
+    height: 100vh;
+    width: calc(100% - 2rem);
+    border: 1px solid black;
+}

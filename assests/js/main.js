@@ -33,8 +33,8 @@ $('.tca').click(function() {
 $('.ptz').click(function() {
     let ptzInfo = `
         PTZ: All Week: 13:00 onwards *No Earlier than 13:00* <br/>
-        Produce: (+4 And Above)(Examples: Potatoes, Bananas), Bays: 2 - 6 <br/>
-        Chilled (0 To +3)(Examples: Grapes, Berries), Bays: 58 - 62 <br/>
+        Produce: (+4\u00B0 And Above)(Examples: Potatoes, Bananas), Bays: 2 - 6 <br/>
+        Chilled (0\u00B0 To +3\u00B0)(Examples: Grapes, Berries), Bays: 58 - 62 <br/>
         Chilled(Meat)(Examples: Steak, Fish Fillet), Bays: 63 - 70 <br/>
      
         Bread (Goes to Goods In Area), Bays: 19 - 21 <br/>
