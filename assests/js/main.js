@@ -113,6 +113,7 @@ document.getElementById("subDetails").addEventListener("click", function(event) 
     let name = document.getElementById("name").value;
     let company = document.getElementById("company").value;
     let cardGiven = document.getElementById("card-given").value;
+    let timeOut = document.getElementById("time-out").value;
     let trained = document.getElementById("flexSwitchCheckDefault").checked ? "Yes" : "No";
 
     let fileContent = `Driver Registration: ${reg}\nDriver Name: ${name}\nCompany: ${company}\nCard Given: ${cardGiven}\nDriver Trained: ${trained}`;
